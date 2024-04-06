@@ -214,6 +214,7 @@ CreateThread(function()
     })
 
     for _, loc in pairs(wx.ATMs.manualLocations) do
+        Blip(loc.x, loc.y, loc.z, 108, wx.BlipNames.atm)
         exports.ox_target:addBoxZone({
             coords = vec3(loc.x, loc.y, loc.z),
             size = vec3(1.0, 1.0, 1.0),
