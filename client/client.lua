@@ -22,7 +22,7 @@ function Withdraw()
         }
     )
     if not withdraw then return end
-    local success = lib.callback.await('wx_banking:withdraw', withdraw[1])
+    local success = lib.callback.await('wx_banking:withdraw', false, withdraw[1])
     if success then
         Notify(("You have successfully withdrew %s$"):format(withdraw[1]))
     else
@@ -45,7 +45,7 @@ function Deposit()
         }
     )
     if not deposit then return end
-    local success = lib.callback.await('wx_banking:deposit', deposit[1])
+    local success = lib.callback.await('wx_banking:deposit', false, deposit[1])
     if success then
         Notify(("You have successfully deposited %s$"):format(deposit[1]))
     else
